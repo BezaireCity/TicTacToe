@@ -1,7 +1,7 @@
 function playerTurn(player){
     let currentPlayer=player
     let nextPlayer
-    if (currentplayer=='X'){
+    if (currentPlayer=='X'){
         nextPlayer='O'
     } else {
         nextPlayer='X'
