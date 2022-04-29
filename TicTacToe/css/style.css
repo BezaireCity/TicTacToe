@@ -21,55 +21,42 @@ header {
   height: 200px;
   width: 33.333%;
   float: left;
-  font: 5rem;
+  text-align: center;
+  font-size: 4rem;
+  padding-top: 60px;
 }
 
-#topLeft{
+#TopLeft{
+  border-bottom: 2px solid black;
+}
+
+#TopMiddle{
   border-right: 2px solid black;
+  border-left: 2px solid black;
   border-bottom: 2px solid black;
 }
 
-#topMiddle{
+#TopRight{
+  border-bottom: 2px solid black;
+}
+
+#MiddleMiddle{
   border-right: 2px solid black;
-  border-bottom: 2px solid black;
- 
-}
-
-#topRight{
-  border-bottom: 2px solid black;
   border-left: 2px solid black;
 }
 
-#leftMiddle{
-  border-bottom: 2px solid black;
-}
-
-#middleMiddle{
-
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
-}
-
-#rightMiddle{
-  border-bottom: 2px solid black;
-  
+#BottomLeft{
   border-top: 2px solid black;
 }
 
-#bottomLeft{
-
-  border-right: 2px solid black;
-}
-
-#bottomMiddle{
+#BottomMiddle{
+  border-top: 2px solid black;
   border-right: 2px solid black;
   border-left: 2px solid black;
 }
 
-#bottomRight{
- 
-  border-left: 2px solid black;
+#BottomRight{
+  border-top: 2px solid black;
 }
 /******************************************
 /* ADDITIONAL STYLES
