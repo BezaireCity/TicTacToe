@@ -24,50 +24,50 @@ header {
   font: 5rem;
 }
 
-#TopLeft{
+#topLeft{
   border-right: 2px solid black;
   border-bottom: 2px solid black;
 }
 
-#TopMiddle{
+#topMiddle{
   border-right: 2px solid black;
   border-bottom: 2px solid black;
  
 }
 
-#TopRight{
+#topRight{
   border-bottom: 2px solid black;
   border-left: 2px solid black;
 }
 
-#LeftMiddle{
+#leftMiddle{
   border-bottom: 2px solid black;
 }
 
-#MiddleMiddle{
+#middleMiddle{
 
   border-right: 2px solid black;
   border-bottom: 2px solid black;
   border-left: 2px solid black;
 }
 
-#RightMiddle{
+#rightMiddle{
   border-bottom: 2px solid black;
   
   border-top: 2px solid black;
 }
 
-#BottomLeft{
+#bottomLeft{
 
   border-right: 2px solid black;
 }
 
-#BottomMiddle{
+#bottomMiddle{
   border-right: 2px solid black;
   border-left: 2px solid black;
 }
 
-#BottomRight{
+#bottomRight{
  
   border-left: 2px solid black;
 }
