@@ -15,6 +15,10 @@ function changePlayer(player) {
     }
 }
 
+document.querySelector("#startGame").addEventListener('click', event =>{
+    document.querySelectorAll(".Boxes").forEach(box => box.innerHTML = "");
+});
+
 function checkWin(){
     const topLeft = document.querySelector("#TopLeft");
     const topMiddle = document.querySelector("#TopMiddle");
