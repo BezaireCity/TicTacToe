@@ -2,8 +2,16 @@ let currentPlayer = "X"
 
 document.querySelectorAll(".Boxes").forEach(box => box.addEventListener('click', event =>{
     box.innerHTML = currentPlayer;
-    checkWin() ? alert(`${currentPlayer} has won!`) : currentPlayer = (currentPlayer == "X") ? "O" : "X";
+    checkWin() ? document.querySelector('h1').innerText=`${currentPlayer} has won!` : changePlayer(currentPlayer);
 }));
+
+function changePlayer(player) {
+    if (player=="X"){
+        currentPlayer='O'
+    } else {
+        currentPlayer='X'
+    }
+}
 
 function checkWin(){
     const topLeft = document.querySelector("#TopLeft");
@@ -16,27 +24,21 @@ function checkWin(){
     const bottomMiddle = document.querySelector("#BottomMiddle");
     const bottomRight = document.querySelector("#BottomRight");
 
-    console.log(topLeft.innerHTML);
-    console.log(topRight.innerHTML);
-    console.log(topMiddle.innerHTML);
-    console.log(leftMiddle.innerHTML);
-    console.log(middleMiddle.innerHTML);
-    console.log(rightMiddle.innerHTML);
     //Row Check
     if(
         //Row Check
-        ((topLeft.innerHTML == topMiddle.innerHTML) && (topMiddle.innerHTML == topRight.innerHTML)) ||
-        ((leftMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == rightMiddle.innerHTML)) ||
-        ((bottomLeft.innerHTML == bottomMiddle.innerHTML) && (bottomMiddle.innerHTML == bottomRight.innerHTML)) ||
+        ((topLeft.innerHTML == topMiddle.innerHTML) && (topMiddle.innerHTML == topRight.innerHTML)) && (topMiddle.innerHTML != "") ||
+        ((leftMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == rightMiddle.innerHTML)) && (leftMiddle.innerHTML != "") ||
+        ((bottomLeft.innerHTML == bottomMiddle.innerHTML) && (bottomMiddle.innerHTML == bottomRight.innerHTML))  && (bottomLeft.innerHTML != "") ||
         
         //Column Check
-        ((topLeft.innerHTML == leftMiddle.innerHTML) && (leftMiddle.innerHTML == bottomLeft.innerHTML)) ||
-        ((topMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomMiddle.innerHTML)) ||
-        ((topRight.innerHTML == rightMiddle.innerHTML) && (rightMiddle.innerHTML == bottomRight.innerHTML)) ||
+        ((topLeft.innerHTML == leftMiddle.innerHTML) && (leftMiddle.innerHTML == bottomLeft.innerHTML)) && (topLeft.innerHTML != "")||
+        ((topMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomMiddle.innerHTML)) && (topMiddle.innerHTML != "") ||
+        ((topRight.innerHTML == rightMiddle.innerHTML) && (rightMiddle.innerHTML == bottomRight.innerHTML)) && (topRight.innerHTML != "") ||
         
         //Diagonal Check
-        ((topLeft.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomRight.innerHTML)) ||
-        ((topRight.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomLeft.innerHTML))
+        ((topLeft.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomRight.innerHTML)) && (topLeft.innerHTML != "") ||
+        ((topRight.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomLeft.innerHTML)) && (topRight.innerHTML != "")
     ){
         return true;
     }
