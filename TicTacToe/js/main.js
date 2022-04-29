@@ -6,7 +6,7 @@ function playerTurn(player){
     } else {
         nextPlayer='X'
     }
-    document.querySelector('boxes').addEventListener('click', addMark())
+    document.querySelector('Boxes').addEventListener('click', addMark())
     checkIfWin()? gameEnd(currentPlayer): playerTurn(nextPlayer)
 }
 
