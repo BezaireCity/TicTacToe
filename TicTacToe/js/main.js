@@ -1,10 +1,8 @@
 let currentPlayer = "X"
 
 document.querySelectorAll(".Boxes").forEach(box => box.addEventListener('click', event =>{
-    if (box.innerHTML==''){
-        box.innerHTML = currentPlayer;
-        checkWin() ? document.querySelector('h1').innerText=`${currentPlayer} has won!` : changePlayer(currentPlayer);
-    }
+    box.innerHTML = currentPlayer;
+    checkWin() ? document.querySelector('h1').innerText=`${currentPlayer} has won!` : changePlayer(currentPlayer);
 }));
 
 function changePlayer(player) {
@@ -14,6 +12,10 @@ function changePlayer(player) {
         currentPlayer='X'
     }
 }
+
+document.querySelectorAll("#startGame").addEventListener('click', event =>{
+    document.querySelectorAll(".Boxes").forEach(box => box.innerHTML = "");
+});
 
 function checkWin(){
     const topLeft = document.querySelector("#TopLeft");
