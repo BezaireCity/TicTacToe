@@ -16,15 +16,15 @@ function gameEnd(player){
 }
 
 function checkWin(){
-    const topLeft = document.getElementById("#TopLeft");
-    const topMiddle = document.getElementById("#TopMiddle");
-    const topRight = document.getElementById("#TopRight");
-    const leftMiddle = document.getElementById("#LeftMiddle");
-    const middleMiddle = document.getElementById("#MiddleMiddle");
-    const rightMiddle = document.getElementById("#RightMiddle");
-    const bottomLeft = document.getElementById("#BottmeLeft");
-    const bottomMiddle = document.getElementById("#BottomMiddle");
-    const bottomRight = document.getElementById("#BottomRight");
+    const topLeft = document.getElementById("#topLeft");
+    const topMiddle = document.getElementById("#topMiddle");
+    const topRight = document.getElementById("#topRight");
+    const leftMiddle = document.getElementById("#leftMiddle");
+    const middleMiddle = document.getElementById("#middleMiddle");
+    const rightMiddle = document.getElementById("#rightMiddle");
+    const bottomLeft = document.getElementById("#bottmeLeft");
+    const bottomMiddle = document.getElementById("#bottomMiddle");
+    const bottomRight = document.getElementById("#bottomRight");
 
     //Row Check
     if(
