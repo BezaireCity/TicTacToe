@@ -1,60 +1,44 @@
-function playerTurn(player){
-    let currentPlayer=player
-    let nextPlayer
-    if (currentPlayer=='X'){
-        nextPlayer='O'
-    } else {
-        nextPlayer='X'
-    }
-    document.querySelector('Boxes').addEventListener('click', addMark())
-    checkIfWin()? gameEnd(currentPlayer): playerTurn(nextPlayer)
-}
+let currentPlayer = "X"
 
-function gameEnd(player){
-    alert(`Congrats player ${player} you have won!`)
-    document.querySelector('#startGame').addEventListener('click', startGame())
-}
+document.querySelectorAll(".Boxes").forEach(box => box.addEventListener('click', event =>{
+    box.innerHTML = currentPlayer;
+    checkWin() ? alert(`${currentPlayer} has won!`) : currentPlayer = (currentPlayer == "X") ? "O" : "X";
+}));
 
 function checkWin(){
-    const topLeft = document.getElementById("#topLeft");
-    const topMiddle = document.getElementById("#topMiddle");
-    const topRight = document.getElementById("#topRight");
-    const leftMiddle = document.getElementById("#leftMiddle");
-    const middleMiddle = document.getElementById("#middleMiddle");
-    const rightMiddle = document.getElementById("#rightMiddle");
-    const bottomLeft = document.getElementById("#bottmeLeft");
-    const bottomMiddle = document.getElementById("#bottomMiddle");
-    const bottomRight = document.getElementById("#bottomRight");
+    const topLeft = document.querySelector("#TopLeft");
+    const topMiddle = document.querySelector("#TopMiddle");
+    const topRight = document.querySelector("#TopRight");
+    const leftMiddle = document.querySelector("#LeftMiddle");
+    const middleMiddle = document.querySelector("#MiddleMiddle");
+    const rightMiddle = document.querySelector("#RightMiddle");
+    const bottomLeft = document.querySelector("#BottomLeft");
+    const bottomMiddle = document.querySelector("#BottomMiddle");
+    const bottomRight = document.querySelector("#BottomRight");
 
+    console.log(topLeft.innerHTML);
+    console.log(topRight.innerHTML);
+    console.log(topMiddle.innerHTML);
+    console.log(leftMiddle.innerHTML);
+    console.log(middleMiddle.innerHTML);
+    console.log(rightMiddle.innerHTML);
     //Row Check
     if(
         //Row Check
-        ((topLeft.value == topMiddle.value) && (topMiddle.value == topRight.value)) ||
-        ((leftMiddle.value == middleMiddle.value) && (middleMiddle.value == rightMiddle.value)) ||
-        ((bottomLeft.value == bottomMiddle.value) && (bottomMiddle.value == bottomRight.value)) ||
+        ((topLeft.innerHTML == topMiddle.innerHTML) && (topMiddle.innerHTML == topRight.innerHTML)) ||
+        ((leftMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == rightMiddle.innerHTML)) ||
+        ((bottomLeft.innerHTML == bottomMiddle.innerHTML) && (bottomMiddle.innerHTML == bottomRight.innerHTML)) ||
         
         //Column Check
-        ((topLeft.value == leftMiddle.value) && (leftMiddle.value == bottomLeft.value)) ||
-        ((topMiddle.value == middleMiddle.value) && (middleMiddle.value == bottomMiddle.value)) ||
-        ((topRight.value == rightMiddle.value) && (rightMiddle.value == bottomRight.value)) ||
+        ((topLeft.innerHTML == leftMiddle.innerHTML) && (leftMiddle.innerHTML == bottomLeft.innerHTML)) ||
+        ((topMiddle.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomMiddle.innerHTML)) ||
+        ((topRight.innerHTML == rightMiddle.innerHTML) && (rightMiddle.innerHTML == bottomRight.innerHTML)) ||
         
         //Diagonal Check
-        ((topLeft.value == middleMiddle.value) && (middleMiddle.value == bottomRight.value)) ||
-        ((topRight.value == middleMiddle.value) && (middleMiddle.value == bottomLeft.value))
+        ((topLeft.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomRight.innerHTML)) ||
+        ((topRight.innerHTML == middleMiddle.innerHTML) && (middleMiddle.innerHTML == bottomLeft.innerHTML))
     ){
         return true;
-    } else {
-    return false;
     }
-}
-
-document.querySelector('#startGame').addEventListener('click', startGame())
-
-function startGame(){
-    alert('Player 1 goes first! You are X!')
-    playerTurn("X")
-}
-
-function addMark(player){
-    this.innerText? this.innerText==player : playerTurn(player)
+    return false;
 }
